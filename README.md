@@ -1,4 +1,4 @@
 # BeeOnCode-
 
-lesson 10 - figma/fotoshop/git 
+lesson 10 - figma/fotoshop/git <br>
 lesson 11 - 
