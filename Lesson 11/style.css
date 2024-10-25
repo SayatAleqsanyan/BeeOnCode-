@@ -1,0 +1,113 @@
+.div1 {
+  width: 200px;
+  height: 200px;
+  background-color: coral;
+
+  animation-name: animationName; /*anun animaciayi*/
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+  animation-fill-mode: both;
+
+  transition-property: background-color, transform;
+  transition-duration: 5s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-delay: 0.2s;
+}
+
+
+
+@keyframes animationName {
+  from {
+    background-color: coral;
+    height: 25px;
+    
+    
+    
+  }
+
+  50% {
+    background-color: brown;
+    width: 250px;
+    
+    
+  }
+
+  to {
+    background-color: rgb(31, 8, 133);
+    transform: translate(150px, 150px);
+  }
+}
+
+.div1:hover {
+  animation-play-state: paused;
+  transform: scale(1.2);
+
+}
+
+.cont {
+  perspective: 1000px;
+}
+
+.div2 {
+  
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+  transform-style: preserve-3d;
+  animation: rotate 5s infinite linear;
+  
+}
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg);
+  }
+
+  to {
+    transform: rotatey(360deg);
+    
+
+    /* transform: skewX(20deg); */
+    
+  }
+}
+
+.div2:hover {
+  transform: none;
+  animation: none;
+}
+
+@font-face {
+  font-family: "imFont";
+  src:url(./Extra\ Days.ttf)
+}
+
+p {
+  font-family: "imFont", sans-serif;
+
+
+}
+
+.myA {
+  width: 260px;
+  height: 250px;
+  background-image: url(./CSS-Sprites.png);
+  background-position: 0px 0px;
+  animation: pley 0.5s steps(6) infinite;
+}
+
+@keyframes pley {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -1560px 0;
+  }
+}
