@@ -1,0 +1,31 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cont1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item1 {
+  width: 29.375px;
+  height: 95px;
+  background-image: url(./img/img1.png);
+  background-position: 0px 0px;
+  animation: pley1 0.75s steps(8) infinite;
+}
+
+@keyframes pley1 {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 500px 0;
+  }
+}
+

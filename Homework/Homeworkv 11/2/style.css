@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cont {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+#item {
+  background-image: url(./img/1.jpg);
+  background-size: 250px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 100px;
+  appearance:none;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#item::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px rgb(24, 83, 160);
+  transition: 1.5s;
+  background-color: rgba(187, 214, 34, 0.397);
+}
+
+#item:checked {
+  background-image: url(./img/2.jpg);
+}
+
+#item:checked::before {
+  left: calc(100% - 115px);
+  background-color: rgba(70, 39, 243, 0.59);
+  box-shadow: inset 0 0 50px rgb(0, 8, 10);
+}
+
+
+

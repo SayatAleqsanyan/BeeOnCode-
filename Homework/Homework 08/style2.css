@@ -1,0 +1,149 @@
+:root {
+  --nav-padding: 0 50px;
+  --padding-button: 5px 25px;
+  --nav-color: rgba(140, 141, 141, 0.603);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6E6C6C;
+}
+
+img {
+  margin: 5px;
+}
+
+nav {
+  padding: var(--nav-padding);
+  background-color: var(--nav-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  width: 80px;
+  filter: invert(17%) sepia(67%) saturate(6813%) hue-rotate(343deg) brightness(71%) contrast(120%);
+}
+
+#search {
+  width: 280px;
+  height: 40px;
+  border: 3px solid rgba(250, 250, 249, 0.39);
+  border-radius: 10px;
+  padding: 0 10px;
+  transition: border 0.3s;
+}
+
+#search:focus {
+  border-color: rgba(236, 234, 89, 0.637);
+  outline: none; 
+}
+
+#login {
+  background-color: rgba(250, 250, 250, 0.6);
+  padding: var(--padding-button);
+  border: 1px solid rgba(252, 252, 252, 0.705);
+  border-radius: 10px;
+  transition: background-color 0.25s;
+}
+
+#login:hover {
+  background-color: rgba(250, 250, 250, 0.9);
+  cursor: pointer;
+}
+
+.nav_block {
+  width: 100%;
+  margin: 0 50px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav_block ul {
+  display: flex;
+}
+
+.nav_block li {
+  padding: 10px 25px;
+  text-align: center;
+  border-bottom: 3px solid #6E6C6C;
+  transition: border-color 0.3s;
+}
+
+.nav_block li:hover {
+  border-bottom: 3px solid #a00d0d;
+}
+
+.nav_block div {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(199, 195, 195, 0.705);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.nav_block img {
+  width: 50px;
+  height: 50px;
+}
+
+.div_ {
+  position: absolute;
+  font-size: 40px;
+}
+
+.divz {
+  display: flex;
+  justify-content: space-evenly;
+  padding: var(--nav-padding);
+}
+
+.divz img {
+  width: 170px;
+  height: 110px;
+}
+
+.divz div {
+  max-width: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  #search {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .nav_block {
+    flex-direction: column;
+  }
+
+  .nav_block ul {
+    flex-direction: column;
+  }
+
+  .nav_block li {
+    padding: 10px;
+  }
+}
