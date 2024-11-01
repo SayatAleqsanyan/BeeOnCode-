@@ -1,0 +1,68 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f4aaf4;
+}
+
+.cont {
+  width: 80%;
+  padding: 10px;
+  background-color: #fff;
+}
+
+/* @media (orientation: portrait) {
+  .cont {
+    background-color: aqua;
+  }
+}
+
+@media (orientation: landscape) {
+  .cont {
+    background-color: rgb(25, 0, 255);
+  }
+} 
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .cont {
+    background-color: rgb(162, 0, 255);
+  }
+}
+
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .cont {
+    background-color: rgb(11, 235, 3);
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .cont {
+    background-color: rgb(162, 0, 255);
+  }
+}
+  */
+
+
+
+  @media not all and (max-width: 768px) {
+    .cont {
+      background-color: rgb(162, 0, 255);
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .cont {
+      background-color: rgb(219, 173, 21);
+    }
+  }
+
+  @media only screen and (max-width: 600px),
+          only screen and (min-width: 900px) {
+    .cont {
+      background-color: rgb(219, 173, 21);
+    }
+  }

@@ -1,0 +1,179 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.35s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top:0px;
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  background-color: rgb(132, 185, 185);
+  display: flex;
+  justify-content: space-between;
+}
+
+header img {
+  width: 100px;
+  height: 80px;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li a { 
+  color: blue;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 1px solid blue;
+  border-radius: 15px;
+  
+}
+
+header nav ul li a:hover {
+  box-shadow: 2px 2px 20px black;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.cont0 {
+  width: 100%;
+  background-color: blanchedalmond;
+  height: 450px;
+}
+
+.imgD {
+  margin: 50px auto;
+  height: 500px;
+  max-width: 980px;
+  background-image: url(./img/img.jpg);
+  background-repeat: no-repeat;
+}
+
+.cont0 h2 {
+  margin: 20px;
+  text-align: center;
+}
+
+.cont1 img {
+  height: 200px;
+}
+
+.cont1 img,
+.cont1 p,
+.cont1 h3 {
+  width: 300px;
+  margin: 5px;
+  text-align: center;
+}
+
+.cont1 {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.cont1 section {
+
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cont1 a,
+.cont2 section > a {
+  color: blue;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 1px solid blue;
+  border-radius: 15px;
+}
+
+.cont1 a:hover,
+.cont2 section > a:hover {
+  color: white;
+  background-color: blue ;
+}
+
+.cont2 img {
+  width: 40px;
+  height: 40px;
+}
+
+.cont2 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cont2 section {
+  width: 300px;
+  height: 350px;
+  margin: 5px;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cont2 span {
+  display: flex;
+  align-items: center;
+}
+
+.cont2 .input {
+  border: 1px solid rgba(0, 0, 255, 0.4);
+  border-radius: 20px;
+  height: 20%;
+  padding: 15px;
+  
+}
+
+footer {
+  background-color: rgba(54, 54, 54, 0.712);
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+footer div {
+  max-width: 400px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1100px) {
+
+  .cont {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    flex-direction: column;
+    min-width: 200px;
+  }
+}
