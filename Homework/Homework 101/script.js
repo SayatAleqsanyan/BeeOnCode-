@@ -4,7 +4,6 @@
 // Առաջին prompt-ում մուտքագրվում թիվը, իսկ երկրորդում թվի աստիճանը, հաշվել մուտքագրված թվի համապատասխան աստիճանը
 // Օրինակ՝ 4,2 թվերի դեպքում արդյունքը կլինի՝  4^2=16
 
-
 let prompt_a1, prompt_b1, prompt_r1;
 
 alert("Ծրագիր - թվի աստիճանը հաշվելու համար")
@@ -84,6 +83,7 @@ if ( prompt_a4 >= 10 && prompt_a4 <100 )  {
 // ստուգել՝ արդյո՞ք կա գոնե մեկ թիվ, որը հավասար է 0 -ի 
 // մուտքագրված երեք թվերը տպել console - ում դասավորված աճման կարգով
 
+alert("Ծրագիր - արդյո՞ք թիվը հավասար են իրար կամ կա գոնե մեկ թիվ, որը հավասար է 0 -ի")
 
 let a = Number(prompt("Enter first Number: "));
 let b = Number(prompt("Enter second Number: "));
@@ -100,7 +100,7 @@ if (a == b && b == c && c == 0) {
 } else if (a == 0 || b ==0 || c ==0) {
   alert("Կա գոնե մեկ թիվ, որը հավասար է 0 -ի");
 } else {
-  alert("...") 
+  alert("Չկա գոնե մեկ թիվ, որը հավասար է 0 -ի") 
 }
 
 console.log("Թվերը դասավորված աճման կարգով: " + min_r + " " + mij_r + " " + max_r);
@@ -112,14 +112,15 @@ console.log("Թվերը դասավորված աճման կարգով: " + min_r 
 // prompt - ում մուտքագրվում է վայրկյանների քանակը, մուտքագրված վայրկյանները ձևափոխել օր/ժամ/րոպե/վայրկյան տեսքի և տպել.
 // Օրինակ՝ 187801 վայրկյանի դեպքում արդյունքը կլինի՝ 2 օր, 4 ժամ, 10 րոպե, 1 վայրկյան
 
-alert("Ծրագիր - մուտքագրված վայրկյանները, ձևափոխել օր/ժամ/րոպե/վայրկյան տեսքի")
+alert("Ծրագիր - մուտքագրված վայրկյանները, ձևափոխել տարի/օր/ժամ/րոպե/վայրկյան տեսքի")
 
 let data0 = Number(prompt("մուտքագրվեք թիվ"));
 
+let data_modul_year = data0 % 31536000;
+let data_year = (data0 - data_modul_year) / 31536000;
 
-
-let data_modul_day = data0 % 86400;
-let data_day = (data0 - data_modul_day) / 86400 ;
+let data_modul_day = data_modul_year % 86400;
+let data_day = (data_modul_year - data_modul_day) / 86400 ;
 
 let data_modul_hour = data_modul_day % 3600;
 let data_hour = (data_modul_day - data_modul_hour) / 3600;
@@ -129,4 +130,30 @@ let data_minute = (data_modul_hour - data_modul_minute) / 60;
 
 let data_second = data_modul_minute;
 
-alert(`${data_day} օր, ${data_hour} ժամ, ${data_minute} րոպե, ${data_second} վայրկյան`)
+alert(`${data_year} տարի, ${data_day} օր, ${data_hour} ժամ, ${data_minute} րոպե, ${data_second} վայրկյան`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
