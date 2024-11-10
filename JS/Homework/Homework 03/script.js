@@ -1,140 +1,122 @@
-const arr = [ 5, 3, 8, 6, 2, 4, 1, 7];
-arr[8] = 9;
-console.log("Array: " + arr);
-console.log("Array Length: " + arr.length);
+// Առաջադրանք զանգվածեր
+// 1․ Հայտարարել X թվային զանգված
+// Ստանալ նոր Y զանգված, որի մեջ ավելացնել X զանգվածի այն
+// տարրերը, որոնք գտնվում են [10;20] հատվածում
+let x = new Array(5, 17, 28, 65, 45, 0, -14, 54, 65, 85,
+45, -41, 12, 25, 10, 3, 6, 5, 98, 45, 10, 14, -14, 54, 87,
+95, 75, 45, 8);
 
-const arrString = ["Am", "Ru", "Net", "Com", "Am", "Org", "Am", "Info", "New"];
-console.log("Array String: " + arrString);
-
-arr.push(0) // avelacnel element verjic
-console.log("push: " + arr);
-arr.pop(); // jnjel verjin element@
-console.log("pop: " + arr);
-arr.unshift(0); //avelacnel element skzbic
-console.log("unshift: " + arr);
-arr.shift(); // jnjel arajin element@
-console.log("shift: " + arr);
-
-// popoxel bolor elementner@ nuyn chapov
-const arrMap = arr.map((element, index, array) => element + 10 )
-console.log("Map: " + arrMap);
-
-// filtrel
-const arrFilter = arr.filter((element)=> {
-    if(element % 2 === 0) return true
-    else return false
+let y = x.filter((element)=> {
+  if(element <= 20 && element >= 10) return true
+  else return false
 })
-console.log("Filter: " + arrFilter);
+console.log("X զանգվածի այն տարրերը, որոնք գտնվում են [10;20] հատվածում:   " + y);
 
-// hashvel bolor andamneri bazmapatik@ kam gumar@
-const arrReduce = arr.reduce((a, b) => {
-    if (!b) return a
-    return a * b;
+// 2․ Գտնել տրված զանգվածի երկրորդ մեծագույն տարրը
+
+let z = new Array ( ...x );
+z.sort((a, b) => b - a)
+console.log("տրված զանգվածի երկրորդ մեծագույն տարրը:   " +z[1]);
+
+// 3․ Տպել զանգվածում բոլոր զույգ թվերի արտադրյալը
+// Օրինակ․՝ [1,2,3,4,5] -ի դեպքում կստանանք 8, քանի որ առկա է
+// միայն 2 զույգ թիվ 2 և 4 , իսկ 2*4 =8
+
+z = new Array ( ...x );
+z = z.filter((element)=> {
+  if(element % 2 === 0) return true
+  else return false
+})
+
+const rez1 = z.reduce((a, b) => {
+  if (!b) return a
+  return a * b;
 }, 1);
-console.log("Reduce: " + arrReduce);
+console.log("բոլոր զույգ թվերի արտադրյալը:   " + rez1);
 
-// ForEach
-let arrForEach = [0, 1, 2, 3, 4];
-arrForEach.forEach((element, index, array) => {
-    if (element % 2 === 0) {
-    console.log(element * 2);
+// 4․ Զանգվածի բոլոր բացասական թվերը դարձնել 0
+// Օրինակ․՝ [1,2,-5,-6,8] -ի դեպքում կստանանք [1,2,0,0,8]
+
+z = [ ...x ];
+z = x.map((element, index, array) => {
+  if(element < 0) return 0
+  else return element
+  })
+console.log("Զանգվածի բոլոր բացասական թվերը փոխարինվել են 0-ով:   " + z);
+
+// Առաջադրանք 1: Հայտարարել զանգված և հաշվել
+// Միջին քառակուսային = (x[0]^2+x[1]^2 + .. + x[n]^2) / n, որտեղ n =
+// x.length
+
+z = [1, 2, 3, 4, 5, 6, 7]
+const rez2 = z.reduce((a, b) => a + b**2, 0) / z.length;
+console.log(z + " զանգվածի Միջին քառակուսային:  "  + rez2);
+
+// Առաջադրանք 2: Երկու prompt-ում օգտագործողը
+// մուտքագրում է X և Y թվեր
+// Ստանալ պատահական թվերից X տարր պարունակող
+// զանգված, որտեղ տարրերը 0 -ից Y հատվածի ամբողջ թվեր են
+// Օրինակ՝ եթե առաջին prompt դաշտում մուտքագրել ենք 5, իսկ
+// երկրորդ prompt-ում 10 ,պետք է ստանալ 5 տարր պարունակող
+// զանգված, որոնք կլինեն
+// 0-10 հատվածի թվեր(օրինակ՝ [2,5,6,1,10] )
+// Հուշում՝ Պատահական թվերը ստանում ենք JavaScript
+// Math.random() ֆունկցիայի միջոցով
+
+let xn = Number(prompt("Մուտքագրել X-ի արշժեքը"));
+let yn = Number(prompt("Մուտքագրել Y-ի արշժեքը"));
+
+let z3 = new Array ( xn );
+for (i = 0; i < xn; i++)   z3[i] = Math.round(Math.random() * yn);
+console.log("զանգվածի x քանակով 0-ից մինչև y միջակայքում:  " + z3);
+
+// Առաջադրանք 3: Տպել զանգվածի այն տարրերը որոնք ավելի
+// մեծ են քան զանգվածի տարրերի միջին թվաբանականը
+// Օրինակ․՝ [1,2,3,4,5] -ի դեպքում միջին թվաբանականը կլինի
+// (1+2+3+4+5)/5 = 3 ուստի պետք է տպել 4 և 5
+
+const rez4 = z.reduce((a, b) => a + b, 0) / z.length;
+
+z.forEach((element, index, array) => {
+    if (element > rez4) {
+    console.log(element);
   }
-  else console.log(element);
 });
+console.log();
 
-// Length cat
-const arrLength = [0,1,2,3,4,5,6,7,8,9]
-console.log("arrLength: " + arrLength);
-arrLength.length = 5;
-console.log("arrLength: " + arrLength);
+// Առաջադրանք 4: Զանգվածից հեռացնել կրկնվող տարրերը
+// Օրինակ․՝ [55,44,55,30,30] -ի դեպքում կստանանք [55,44,30]
 
-// Delete
-const arrDel = arr.map((element)=> element);
-delete arrDel[2];
-console.log("Delete: " + arrDel);
-console.log("Array: " + arr);
+const arr4 = [55,44,55,30,30]
+const arr5 = new Set(arr4)
+const arr51 = [...arr5];
+console.log("Զանգվածից հեռացնել են կրկնվող տարրերը:  " + arr51);
 
-// Concat
-const arr_a = [1, 2, 3];
-const arr_b = [4, 5, 6];
-const arr_c = [4, 5, 6];
-const group = arr_a.concat(arr_b, arr_c)
-console.log("Arr1: " + arr_a + " Arr2: " + arr_b + " Arr3 :" + arr_c);
-console.log("Concat: " + group);
 
-// Find
-const arrFind = arrString.map((element)=> element);
-if (arrFind.find((element) => element == "Am")) {
-    console.log("Find: " + true);
-} else {
-    console.log("Find: " + false);
+// Առաջադրանք 5: Հայտարարել զանգված և խառնել այս
+// տարրերը պատահական հերթականությամբ
+// Օրինակ․՝ [1,2,3,4] -ի դեպքում կարող ենք ստանալ [2,1,4,3]
+
+const arr6 = [0,1,2,3,4,5,6,7,8,9]
+console.log("Զանգվածի տարրերը պատահական հերթականությամբ:  " + (arr6.sort((a, b) => b - Math.round(Math.random() * a))));
+
+// Առաջադրանք 6: Հայտարարել զանգված՝ կազմված թվերից։
+// Փոխել զանգվածի մեծագույն և փոքրագույն տարրերի տեղերը։
+// Օրինակ․՝ [1,2,3,4] -ի դեպքում կարող ենք ստանալ [4,2,3,1]
+
+const arr7 = [0,1,2,3,4,5,6,7,8,9];
+let aMax = Math.max(...arr7);
+let aMin = Math.min(...arr7);
+
+for( i = 0; i < arr7.length; i++ ) {
+  if(arr7[i] == aMin ) arr7[i] = aMax
+  else if(arr7[i] == aMax ) arr7[i] = aMin
 }
 
-// FindIndex
-const FindIndex = arrFind.findIndex((element) => element !== "Am");
-console.log(FindIndex);
-
-const array = [15, 25, 65, 70, 80, 90, 100]
-
-//Some
-console.log(array.some((element) => element > 100));
-
-// Every
-console.log(array.every((element) => element % 5 === 0));
-
-// Includes
-const arrIncludes = ["apple", "cherry", "peach", "orange", "apple"];
-console.log(arrIncludes.includes("apple1"));
-
-// Sort
-console.log(array.sort((a, b) => b - a)); // mecic - poqr
-console.log(array.sort((a, b) => a - b)); // poqric - mec 
-
-// Slice
-const arrResult = array.slice(1, 5);
-console.log(arrResult);
-
-// Splice
-const arrSplice = [15, 80, 90, 70, 25, 65, 100];
-arrSplice.splice(2, 3, "28", "29");
-console.log(arrSplice);
-
-// ...array
-const newArr = [...array]
-console.log(...array);
+console.log("Զանգվածի մեծագույն և փոքրագույն տարրերի տեղերը փոխված են:  " + arr7);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// * կարող եք օգտագործել JS -ի Set տվյալների ստրուկտուրան, որը իրենից ներկայացնում է
+// չկրկնվող արժեքների համակարգ։ Այն հայտարարվում է new Set([1, 2, 3, 4]) եղանակով։ Այն ունի
+// հետևյալ մեթոդները՝ .add(value), .delete(value), .has(value), .clear(), .size()
 

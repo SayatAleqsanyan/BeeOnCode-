@@ -72,9 +72,101 @@ function palindrom(params) {
 
 log(palindrom("Menak katak kanem"));
 
+const aaa = []
+const bbb =new Array()
+
+console.log(aaa, bbb);
+
+
+/* 
+// // Դյուրադարձուկ
+
+// // -7654321
+// // 0123456
+// const str = "Կարապետ"
+// console.log(str.length);
+
+// console.log(str.charAt(0));
+// console.log(str[0]);
+
+// console.log(str.toUpperCase());
+// console.log(str.toLowerCase());
+
+// console.log(str.includes("ետ", 5));
+// console.log(str.indexOf("պետ", 6));
+
+// console.log(str.slice(3, -3));
+
+// const str2 = "     Ես իմ անուշ Հայաստանի ․․․     "
+// const arr = str2.split("ա")
+// console.log(str2.split("ա"));
+// console.log(arr.join("ա"));
+
+// console.log(str2.trim());
+// console.log(str2.replace("ա", "բ"));
+// console.log(str2.replaceAll("ա", "բ"));
+
+// const str3 = "2"
+// const str4 = "10"
+// console.log(str3.padStart(2, "0"));
+// console.log(str4.padStart(2, "0"));
+
+// console.log(str3.padEnd(2, "0"));
+// console.log(str4.padEnd(2, "0"));
+
+// // console.log(str.at(-1));
+
+// function palindrom(params) {
+//     const tmp = params.toLowerCase()
+//     return (tmp.split("").reverse().join("") === tmp);
+// }
+
+// console.log(palindrom("Մենակ կատակ կանեմ"))
+
+
+// const arr3 = [1, 2, 3]
+// const arr4 = [...arr3]
+// arr4[1] = 5
+// console.log(arr3, arr4);
+
+
+const pp = []
+const po = new Array([5,6,7], [9,8,7])
+
+console.log(po);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 
 
 
