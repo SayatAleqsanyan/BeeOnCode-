@@ -109,6 +109,15 @@ students2.forEach(student => {
 }});
 
 
+// let students2 = students.map(val => {
+//   return { ...val, raiting: [...val.raiting], language: [...val.language] }
+// });
+
+// let students2 = students.map(val => {
+//   return { ...val, raiting: val.raiting.map(rat => {return {...rat}}), language: [...val.language] }
+// });
+
+
 // let students2 = [...students, ...students];
 
 // students2.forEach((student, index) => student.studentNumber = index + 1);
