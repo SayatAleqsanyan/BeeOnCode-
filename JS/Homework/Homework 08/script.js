@@ -95,10 +95,11 @@ class Developer {
 
   tpel() {
     let skillsList = this.skills.map(skill => `<li>${skill}</li>`).join('');
-    document.write(`
+    let developerInfo = `
       <p>Name: ${this.name} ${this.surname}</p>
       <ul>${skillsList}</ul>
-    `);
+    `;
+    return developerInfo; 
   }
 }
 
@@ -116,11 +117,12 @@ class Backend extends Developer {
 
   tpel() {
     let skillsList = this.skills.map(skill => `<li>${skill}</li>`).join('');
-    document.write(`
+    let developerInfo = `
       <p>Name: ${this.name} ${this.surname}</p>
       <p>Direction: ${this.direction}</p>
       <ul>${skillsList}</ul>
-    `);
+    `;
+    return developerInfo; 
   }
 }
 
@@ -141,8 +143,8 @@ let highestSalaryDeveloper = developers.reduce((max, developer) => {
   return developer.salary > max.salary ? developer : max;
 }, developers[0]);
 
-document.write(`<h3>Highest Salary Developer:</h3>`);
-highestSalaryDeveloper.tpel();
+document.body.innerHTML += `<h3>Ամենա բարձր աշխատավարձ ստացող ծրագրավորողը:</h3>`;
+document.body.innerHTML += highestSalaryDeveloper.tpel();
 
 let highestSalaryFrontEnd = developers
   .filter(dev => dev instanceof FrontEnd)
@@ -150,11 +152,11 @@ let highestSalaryFrontEnd = developers
     return developer.salary > max.salary ? developer : max;
   }, developers[0]);
 
-document.write(`<h3>Highest Salary FrontEnd Developer:</h3>`);
-highestSalaryFrontEnd.tpel();
+document.body.innerHTML += `<h3>Ամենա բարձր աշխատավարձ ունեցող FrontEnd ծրագրավորողը:</h3>`;
+document.body.innerHTML += highestSalaryFrontEnd.tpel();
 
 let totalSalaryFrontEnd = developers
   .filter(dev => dev instanceof FrontEnd)
   .reduce((sum, developer) => sum + developer.salary, 0);
 
-document.write(`<h3>Total Salary of FrontEnd Developers: ${totalSalaryFrontEnd}</h3>`);
+document.body.innerHTML += `<h3>FrontEnd ծրագրավորողների ընդհանուր աշխատավարձը կազմում է: ${totalSalaryFrontEnd}</h3>`;
