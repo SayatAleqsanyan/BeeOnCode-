@@ -141,17 +141,69 @@ makeCoffee('latte');
 //----------------------------------------------------------------
 // test 
 
-const cont = [
-  "start", "0001", "0002", "0003", "end"
-]
+// const cont = [
+//   "start", "0001", "0002", "0003", "end"
+// ]
 
-async function test(arr) {
-  for (let e of arr) {
-    await new Promise(function(resolve, reject) {
-    setTimeout(function() {
-      resolve (console.log(e) )
-    }, 1000)
-  })
-}}
+// async function test(arr) {
+//   for (let e of arr) {
+//     await new Promise(function(resolve, reject) {
+//     setTimeout(function() {
+//       resolve (console.log(e) )
+//     }, 1000)
+//   })
+// }}
 
-test(cont)
+// test(cont)
+
+const COFFE_APP_ARR = [
+  "Պատրաստում ենք ",
+  "Տեղադրում ենք բաժակը",
+  "Լցնում ենք ջուր",
+  "Ավելացնում ենք սուրճ",
+  "Ավելացնում ենք շաքարավազ",
+  "Խառնում ենք",
+  " պատրաստված է։",
+];
+
+async function test(num) {
+  let currentCoffee = "";
+  switch (num) {
+    case 1:
+      currentCoffee = "espresso";   // առանց շաքարավազ
+      break;
+    case 2:
+      currentCoffee = "latte";
+      break;
+    case 3:
+      currentCoffee = "cappuccino";
+      break;
+    default:
+      console.log("Սխալ: Չկա նման տեսակի սուրճ");
+      return;
+  }
+  for (let i = 0; i < COFFE_APP_ARR.length; i++) {
+
+    if (currentCoffee === "espresso" && i === 4) {
+      continue
+    }
+    await new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve(checker(COFFE_APP_ARR[i], i, currentCoffee, COFFE_APP_ARR));
+      }, 1000);
+    });
+  }
+}
+
+function checker(string, index, currentCoffee, arr) {
+  if (index === 0) {
+    string += currentCoffee
+  }
+  if (index === arr.length - 1) {
+    string = currentCoffee + string
+  }
+  console.log(string, index)
+}
+
+const NUM = 1
+test(NUM);
