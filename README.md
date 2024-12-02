@@ -25,10 +25,10 @@ Lesson 6 - function <br>
 Lesson 7 - class <br>
 Lesson 8 - asincronia <br>
 Lesson 9 - Json <br>
-Lesson 10 - 
-Lesson 11 - 
-Lesson 12 - 
-Lesson 13 - 
+Lesson 10 - <br>
+Lesson 11 - <br>
+Lesson 12 - <br>
+Lesson 13 - <br>
 
 
 
