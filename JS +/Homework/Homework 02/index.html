@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div id="div1"></div>
+
+  <div class="cont">
+
+  <h1>Դասընթացներ</h1>
+        
+        <div>
+            <label for="html-css">HTML/CSS (4200 դրամ)</label>
+            <input type="checkbox" id="html-css">
+        </div>
+        
+        <div>
+            <label for="java">Java (5700 դրամ)</label>
+            <input type="checkbox" id="java">
+        </div>
+        
+        <div>
+            <label for="algorithms">Ալգորիթմների տեսություն (12500 դրամ)</label>
+            <input type="checkbox" id="algorithms">
+        </div>
+
+        <div>
+            <label for="sessions">Մասնակցությունների քանակը</label>
+            <input type="number" id="sessions" value="1" min="1">
+        </div>
+
+        <button id="calculate-button">Մասնակցել դասընթացին</button>
+
+        <div id="result"></div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
