@@ -27,11 +27,22 @@ const greenCirc = MyCreateElement('div', "greenCirc", "circle")
 
 const fTime = (ms) => new Promise((resolve, reject) => setTimeout(resolve, ms))
 
-const fColor = async function (id, ms) {
-  id.classList.add("active");
+
+const fColor = async function (selectedElement, ms) {
+  redCirc.classList.remove("active");
+  yellowCirc.classList.remove("active");
+  greenCirc.classList.remove("active");
+
+  selectedElement.classList.add("active");
   await fTime(ms);
-  id.classList.remove("active");
 };
+
+
+// const fColor = async function (id, ms) {
+//   id.classList.add("active");
+//   await fTime(ms);
+//   id.classList.remove("active");
+// };
 
 const start = async function () {
   while (true) {
