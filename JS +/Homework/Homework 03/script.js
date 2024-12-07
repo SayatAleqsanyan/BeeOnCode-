@@ -27,35 +27,50 @@ const greenCirc = MyCreateElement('div', "greenCirc", "circle")
 
 const fTime = (ms) => new Promise((resolve, reject) => setTimeout(resolve, ms))
 
-const fRed = async function () { 
-  redCirc.classList.add("active");
-  yellowCirc.classList.remove("active");
-  greenCirc.classList.remove("active");
-  await fTime(5000)
-}
-
-const fYellow = async function () {
-  yellowCirc.classList.add("active");
-  redCirc.classList.remove("active");
-  greenCirc.classList.remove("active");
-  await fTime(2500)
-}
-
-const fGreen = async function () { 
-  greenCirc.classList.add("active");
-  redCirc.classList.remove("active");
-  yellowCirc.classList.remove("active");
-  await fTime(5000)
-}
+const fColor = async function (id, ms) {
+  id.classList.add("active");
+  await fTime(ms);
+  id.classList.remove("active");
+};
 
 const start = async function () {
   while (true) {
-    await fRed()
-    await fYellow()
-    await fGreen()
-    await fYellow()
+    await fColor(redCirc, 5000);
+    await fColor(yellowCirc, 2500);
+    await fColor(greenCirc, 5000);
+    await fColor(yellowCirc, 2500);
   }
-}
+};
+
+// const fRed = async function () { 
+//   redCirc.classList.add("active");
+//   yellowCirc.classList.remove("active");
+//   greenCirc.classList.remove("active");
+//   await fTime(5000)
+// }
+
+// const fYellow = async function () {
+//   yellowCirc.classList.add("active");
+//   redCirc.classList.remove("active");
+//   greenCirc.classList.remove("active");
+//   await fTime(2500)
+// }
+
+// const fGreen = async function () { 
+//   greenCirc.classList.add("active");
+//   redCirc.classList.remove("active");
+//   yellowCirc.classList.remove("active");
+//   await fTime(5000)
+// }
+
+// const start = async function () {
+//   while (true) {
+//     await fRed()
+//     await fYellow()
+//     await fGreen()
+//     await fYellow()
+//   }
+// }
 
 start()
 
