@@ -1,5 +1,4 @@
-/* 
-    .new-class {
+.new-class {
     width: 100px;
     height: 100px;
     background-color: #961616;
@@ -27,11 +26,10 @@
     height: 100px;
     background-color: #d816b4;
 }
-*/
 
-/* ---------------------------------------------------------- */
 
-/*
+/* ------------------------------------------------------------------------ */
+
 #root {
     display: flex;
     justify-content: center;
@@ -78,4 +76,3 @@
 #redCirc.active {
     background-color: rgb(214, 0, 0);
 }
-*/

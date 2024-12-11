@@ -1,19 +1,19 @@
-// document.createElement() տեգի ստեղծում ---------------------------------------
-const newDiv = document.createElement('div')
+// // document.createElement() տեգի ստեղծում ---------------------------------------
+// const newDiv = document.createElement('div')
 
-// Հատկությունների սահմանում
-newDiv.innerHTML = "Մեր Նոր Դիվը"
+// // Հատկությունների սահմանում
+// newDiv.innerHTML = "Մեր Նոր Դիվը"
 
 // // class
-newDiv.classList.add('new-class')
-newDiv.classList.add('new-class2')
-newDiv.classList.remove('new-class2')
+// newDiv.classList.add('new-class')
+// newDiv.classList.add('new-class2')
+// newDiv.classList.remove('new-class2')
 
-console.log(newDiv.classList.contains("new-class"));
+// console.log(newDiv.classList.contains("new-class"));
 
 // // id
-newDiv.id = "d1"
-console.log(newDiv.id);
+// newDiv.id = "d1"
+// console.log(newDiv.id);
 
 // // style
 // newDiv.style.width = "150px"
@@ -24,10 +24,10 @@ console.log(newDiv.id);
 // // getAttribute()
 // console.log(newDiv.getAttribute("my-data"));
 
+// // ում մեջ ավելացնեմ.appendChild(ինչը) տեգի ավելացում ---------------------------------------
 // // -----children, parent--------------------------------------------------------------------
 // // console.log(document.querySelector("#root").children);
 
-// // ում մեջ ավելացնեմ.appendChild(ինչը) տեգի ավելացում ---------------------------------------
 // // document.getElementById("root")
 // // document.querySelector("#root")
 // // root.appendChild(newDiv)
@@ -71,34 +71,6 @@ console.log(newDiv.id);
 // // ----------------------------------------------------------------------------
 // root.replaceChild(newDiv2, d3)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
 // Traffick
 
 function MyCreateElement(tagName, id, classes = []) {
@@ -130,4 +102,3 @@ const greenCirc = MyCreateElement('div', "greenCirc", "circle")
 // -----------------------------------------------------------------------
 TLBody.append(redCirc, yellowCirc, greenCirc)
 root.appendChild(TLBody)
-*/
