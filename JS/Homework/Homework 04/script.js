@@ -5,10 +5,8 @@ const arrStr1 = str.split(" ");
 const arrStr10 = new Set(arrStr1);
 const arrStr11 = new Array (...arrStr10);
 
-console.log("Զանգվածը որի տեքսից պետք է հեռացնել կրկնվող բառերը");
-console.log(arrStr1);
-console.log("Զանգվածի տեքսից հեռացված են կրկնվող բառերը");
-console.log(arrStr11);
+console.log("Զանգվածը որի տեքսից պետք է հեռացնել կրկնվող բառերը", arrStr1);
+console.log("Զանգվածի տեքսից հեռացված են կրկնվող բառերը", arrStr11);
 
 // Ունենք կամայական տեքստ: prompt-ում մուտքագրում ենք x և y բառերը: Տեքստում x -բառերը փոխարինել y բառով:
 
