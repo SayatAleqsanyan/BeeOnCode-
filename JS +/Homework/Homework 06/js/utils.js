@@ -5,7 +5,7 @@ const newTag = function (tegNem, idN, text = "", ...classN) {
   return nam;
 };
 
-const tableBody = (data, table) => {
+const tableBody = (data, table, showTable) => {
   for (const user in data) {
     const tr = document.createElement("tr");
     for (const value in data[user]) {
@@ -18,17 +18,25 @@ const tableBody = (data, table) => {
     btn.addEventListener("click", function (e) {
       // FIXME: add delete logic
       // console.log(data[user]);
+      let mainData = localStorage.getItem("users");
 
-      let item = e.target.closest('tr')
-      item.remove()
+      localStorage.setItem(
+        "users",
+        JSON.stringify(
+          JSON.parse(mainData).filter((u) => {
+            return u.id !== data[user].id;
+          })
+        )
+      );
+
+      let item = e.target.closest("tr");
+      item.remove();
     });
     const td = newTag("td", "");
     td.append(btn);
     tr.append(td);
     table.append(tr);
   }
-
-
 };
 
 const resetData = () => {

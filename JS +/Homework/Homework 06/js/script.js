@@ -33,6 +33,7 @@ success_btn.addEventListener("click", (event) => {
 });
 
 const showTable = () => {
+  // Ստանում ենք մեր տվյալները
   let data = localStorage.getItem("users");
 // console.log(data);
 
@@ -57,11 +58,12 @@ const showTable = () => {
     table.append(tr);
 
     // ------------------------------------------
-    tableBody(data, table);
+    tableBody(data, table, showTable);
     area.append(table);
 
     const delAll = document.querySelector('#delAll')
     delAll.addEventListener("click", function (data) {
+      localStorage.removeItem("users")
       table.innerHTML = ''
     });
   }
