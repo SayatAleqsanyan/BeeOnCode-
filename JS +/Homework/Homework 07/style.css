@@ -1,0 +1,184 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+#root {
+    min-height: 100vh;
+    background: #535353;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.block {
+    background-color: aliceblue;
+    display: inline-block;
+    width: 45%;
+    margin: 20px 0;
+}
+
+.block1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block1 img {
+    margin: 40px;
+    width: 200px;
+    height: 200px;
+}
+
+.block1 button {
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: rgb(16, 62, 214);
+    color: white;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.block1 button:hover {
+    box-shadow: 1px 1px 20px black;
+}
+
+#comitCont {
+    display: none;
+
+    background-color: rgba(114, 114, 114, 0.39);
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+#comit {
+    background-color: white;
+    width: 80%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#comit p {
+    margin: 0 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#closedB {
+    color: rgb(77, 77, 77); /* Փակված կոճակի գույն */
+    border: none;
+    background-color: rgba(250, 249, 249, 0);
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#closedB:hover {
+    color: black;
+    text-shadow: 7px 2px 7px black;
+}
+
+#story {
+    height: 120px;
+    margin: 0 20px;
+
+    border: 1px solid #ddd; /* Գծի բացույտ գույն */
+    border-radius: 8px; /* Կորցված անկյուններ */
+    padding: 10px; /* Միտումի միջակայք */
+    font-size: 16px; /* Լինելով մեծ և հարմար */
+    font-family: Arial, sans-serif; /* Ընտրովի գրականություն */
+    resize: vertical; /* Մեծացնել միայն ուղղահայաց */
+
+    text-align: left; /* Տեքստը ձախից */
+    direction: ltr; /* Գրավոր ուղղություն */
+
+    transition: all 0.3s ease;
+}
+
+#story:focus {
+    
+    box-shadow: 0 0 10px rgba(72, 224, 72, 0.7); /* Մատնանշվող */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6); /* Ստվեր */
+}
+
+#save {
+    margin: 0 50px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: rgb(16, 62, 214);
+    color: white;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+#save:hover {
+    box-shadow: 1px 1px 20px black;
+}
+
+#allDiv div {
+    margin: 20px; 
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#allDiv div h3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#allDiv div h3 button {
+    color: rgb(77, 77, 77); /* Փակված կոճակի գույն */
+    border: none;
+    background-color: rgba(250, 249, 249, 0);
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#allDiv div h3 button:hover {
+    color: black;
+    text-shadow: 7px 2px 7px black;
+}
+
+#allDiv div p button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#allDiv div ul {
+    /* display: none; */
+    list-style-type: none;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#allDiv div > button {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 5px;
+}

@@ -1,0 +1,20 @@
+.sharik {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: action 4s ease-out forwards;
+}
+
+@keyframes action {
+  0% {
+      opacity: 1;
+      rotatey: 0deg;
+  }
+
+  100% {
+      opacity: 0;
+      transform: translateY(500px) rotateY(1000deg);
+  }
+}
