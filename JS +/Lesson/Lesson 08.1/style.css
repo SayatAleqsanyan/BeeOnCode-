@@ -1,0 +1,12 @@
+.cont div {
+  width: 100px;   
+  height: 100px;  
+  border: 1px solid black;
+  margin: 10px;
+  float: left;
+}
+  
+.div0:hover  { 
+  content: "";
+  background-color: aqua;
+}
