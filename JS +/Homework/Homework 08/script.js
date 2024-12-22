@@ -6,31 +6,101 @@ let cols = 8
 let bombs = 10
 let isLoesed = false
 
+let timers = 0
+let tiv = bombs
 
 const howManyBombs = document.querySelector('#howManyBombs');
 const timer = document.querySelector('#timer');
-
-let timers = 0
-timer.innerHTML = 0
-
 const startGanme = document.querySelector('#start');
+
+const beginner = document.querySelector('#beginner')
+beginner.addEventListener('click', () => {
+  rows = 5
+  cols = 5
+  bombs = 7
+
+  game.innerHTML = '';
+  createGame(rows, cols, bombs);
+  isLoesed = false; 
+  tiv = bombs 
+  howManyBombs.innerHTML = tiv
+  clearInterval(myTimer);
+  myTimer = timerss(1)
+  startGanme.innerHTML = '😀'
+
+  game.style.gridTemplateColumns = `repeat(${cols}, 50px)`
+  game.style.gridTemplateRows = `repeat(${rows}, 50px)`
+  // grid-template-columns: repeat(8, 50px);
+  //   grid-auto-rows: repeat(8, 50px);
+  
+  return timers = 0 
+})
+
+const intermediate = document.querySelector('#intermediate')
+intermediate.addEventListener('click', () => {
+  rows = 8
+  cols = 8
+  bombs = 12 
+
+  game.innerHTML = '';
+  createGame(rows, cols, bombs);
+  isLoesed = false; 
+  tiv = bombs 
+  howManyBombs.innerHTML = tiv
+  clearInterval(myTimer);
+  myTimer = timerss(1)
+  startGanme.innerHTML = '😀'
+
+    game.style.gridTemplateColumns = `repeat(${cols}, 50px)`
+  game.style.gridTemplateRows = `repeat(${rows}, 50px)`
+  
+  return timers = 0
+}) 
+
+const expert = document.querySelector('#expert')
+expert.addEventListener('click', () => {
+  rows = 8
+  cols = 16
+  bombs = 20 
+
+  game.innerHTML = '';
+  createGame(rows, cols, bombs);
+  isLoesed = false; 
+  tiv = bombs 
+  howManyBombs.innerHTML = tiv
+  clearInterval(myTimer);
+  myTimer = timerss(1)
+  startGanme.innerHTML = '😀'
+
+    game.style.gridTemplateColumns = `repeat(${cols}, 50px)`
+  game.style.gridTemplateRows = `repeat(${rows}, 50px)`
+  
+  return timers = 0
+}) 
+
+timer.innerHTML = 0
+const timerss = function(nam) {
+  let timersss = setInterval(() => {
+    timers++
+    timer.innerHTML = timers
+  }, nam * 1000)
+  return timersss
+}
+let myTimer = timerss(1)
+
 
 startGanme.addEventListener('click', () => {    
     game.innerHTML = '';
-        createGame(rows, cols, bombs);
-        isLoesed = false; 
-        tiv = 10 
-        howManyBombs.innerHTML = tiv
-
-      
-        startGanme.innerHTML = '😀'
+    createGame(rows, cols, bombs);
+    isLoesed = false; 
+    tiv = bombs 
+    howManyBombs.innerHTML = tiv
+    clearInterval(myTimer);
+    myTimer = timerss(1)
+    startGanme.innerHTML = '😀'
     
-        return timers = 0
+    return timers = 0
 })
-
-setInterval(() => {
-  timer.innerHTML = timers++
-}, 1000)
 
 /**
  * Create a game board in the #game element
@@ -64,7 +134,7 @@ function createBombs(bombs) {
  * Toggle flag on a cell
  * @param {Element} cell - cell element to toggle flag
  */
-let tiv = 10
+tiv = bombs
 howManyBombs.innerHTML = tiv
 
 function toggleFlag(cell) {
@@ -104,6 +174,7 @@ function openCell(cell) {
         cell.innerHTML = '💣';
         cell.classList.add('bomb')
         isLoesed = true;
+        clearInterval(myTimer);
         gameOver();
         return 
     }

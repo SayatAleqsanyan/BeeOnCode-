@@ -55,20 +55,6 @@
     gap: 10px;
 }
 
-#settingsMeny {
-    padding: 10px 30px;
-    background-color: #ccc;
-    border: 1px solid #999;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition:  0.3s ease;
-}
-
-#settingsMeny:hover {            
-    background-color: #999;
-}
-
 .menu {
     display: flex;
     justify-content: space-around;
@@ -107,4 +93,30 @@
     justify-content: center;
     transition: 0.3s ease;
     text-shadow: 1px 1px 10px rgb(250, 35, 35);
+}
+
+#settingsMeny {
+    position: absolute;
+    bottom:  100px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+#settingsMeny button {
+    margin: 20px;
+    padding: 10px 30px;
+    font-size: 18px;
+    
+    border: 1px solid #999; 
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+#settingsMeny button:hover {
+    border: 1px solid rgb(8, 177, 2);
 }
