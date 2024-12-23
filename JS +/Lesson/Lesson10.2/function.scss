@@ -1,0 +1,3 @@
+@function resize-rems($size, $context: $base-font-size) {
+  @return $size / $context * 1rem;
+}
