@@ -1,0 +1,46 @@
+@import "./mixin.scss";
+@import "./function.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Փոփոխականներ
+$main_color: #565656;
+
+#root {
+  // միքսինների կանչ
+  @include flex;
+  height: 100vh;
+  background-color: $main_color;
+  // Ներկառուցված կլասսներ
+  .container {
+    // միքսինների կանչ
+    // @include flex($justify: space-around, $align: center, $direction: column);
+    // @include flex(space-around, center, column);
+    display: grid;
+    background-color: #fff;
+    padding: 2rem * 2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-size: resize-rems(32, 16);
+
+    &:hover {
+    //   background-color: #a41f1f;
+    }
+  }
+
+  .color_input {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    
+    input {
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+    }
+  }
+}
