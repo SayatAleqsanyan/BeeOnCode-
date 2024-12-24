@@ -54,6 +54,7 @@ matrix.forEach((row, rowIndex) => {
     
     colors() 
   
+    const newColors = document.querySelector("#newColors");
     newColors.addEventListener("click", colors) 
 
   });
