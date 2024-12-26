@@ -1,5 +1,8 @@
 const game = document.querySelector("#game");
 
+const newGame = document.querySelector("#newGame");
+const result = document.querySelector("#result");
+
 let matrix = Array.from({length: 3}, () => Array(3).fill(null));
 let player = 'X'
 let bot = 'O'
@@ -7,9 +10,16 @@ let currentPlayer = 'X';
 let isBot = false;
 
 function createGame() {
+    if (bot === 'X') {
+        isBot = true
+        player = 'O'
+        bot = 'X'
+    }
+
     game.innerHTML = '';
     matrix = Array.from({length: 3}, () => Array(3).fill(null));
     currentPlayer = 'X'; 
+    result.innerHTML = '';
 
     matrix.forEach((row, rowIndex) => {
         row.forEach((_, colIndex) => {
@@ -17,11 +27,39 @@ function createGame() {
             cell.classList.add('cell');
             cell.setAttribute('row', rowIndex);
             cell.setAttribute('col', colIndex);
-            cell.addEventListener('click', () => move(rowIndex, colIndex))
+            cell.addEventListener('click', () => { move(rowIndex, colIndex)})
             game.appendChild(cell)
         })
     })
+
+    if (isBot) {
+        setTimeout(() => {
+            botMove();
+        }, 1000);
+    }
 }
+
+// ընտրություն
+
+const playX = document.querySelector('#btnX')
+const playO = document.querySelector('#btnO')
+
+    playX.addEventListener('click', () => {
+        player = 'X'
+        bot = 'O'
+        createGame()
+    })
+
+    playO.addEventListener('click', () => {
+        isBot = true
+        player = 'O'
+        bot = 'X'
+        createGame()
+    })
+
+// կոճակի ապաակտիվացում
+function noClik() {
+} 
 
 // Խաղացողի խաղալու ֆունկցիան -----------------
 function move(row, col) {
@@ -31,7 +69,8 @@ function move(row, col) {
     updateBoard();      // թարմացնենք կայքի վիզուալը
 
     if (checkWin(currentPlayer)) {
-        alert(`Player ${currentPlayer} wins!`);
+        noClik()
+        result.innerHTML = `Player ${currentPlayer} wins!`;
         return;
     }
 
@@ -48,14 +87,17 @@ function botMove() {
     if (!isDraw()) {
         randomMove()
     } else {
-        alert('Draw!')
+        noClik()
+        result.innerHTML = 'Draw!'
         return; 
     }
     updateBoard()      // թարմացնենք կայքի վիզուալը
     if (checkWin(bot)) {
-        alert(`Bot wins!`);
+        noClik()
+        result.innerHTML = `Bot wins!`;
         return;
     }
+
     currentPlayer = player
     isBot = false
 }
@@ -129,3 +171,7 @@ function isDraw() {
 isDraw();
 // game start
 createGame();
+
+newGame.addEventListener('click', () => {
+    createGame();
+})

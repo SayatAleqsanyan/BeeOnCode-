@@ -52,3 +52,39 @@ h1 {
     cursor: default;
     background-color: transparent;
 }
+
+#newGame {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    margin: 0 10px;
+}
+
+#newGame:hover {
+    background-color: #ccc;
+}
+
+#result {
+    font-size: 3rem;
+    font-weight: bolder;
+    height: 50px;
+}
+
+.btns {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    margin: 0 10px;
+}
+
+.btns:hover {
+    background-color: #ccc;
+}
