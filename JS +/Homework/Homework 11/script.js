@@ -9,9 +9,12 @@ let bot = 'O'
 let currentPlayer = 'X';
 let isBot = false;
 let gameProcess = true;
+let timeoutId;
 
+// creat game ----- խաղի ստեղծում --------------------------
 function createGame() {
     gameProcess = true
+    stopTimeout()
     if (bot === 'X') {
         isBot = true
         player = 'O'
@@ -35,15 +38,15 @@ function createGame() {
     })
 
     if (isBot) {
-        setTimeout(() => {
+        timeoutId = setTimeout(() => {
             botMove();
         }, 1000);
     }
 }
 
-// ընտրություն
-
-const playX = document.querySelector('#btnX')
+// choice X or O ----- ընտրություն X կամ O ----------------------------------------------
+{
+    const playX = document.querySelector('#btnX')
 const playO = document.querySelector('#btnO')
 
     playX.addEventListener('click', () => {
@@ -58,12 +61,14 @@ const playO = document.querySelector('#btnO')
         bot = 'X'
         createGame()
     })
+}
 
-// կոճակի ապաակտիվացում
-function noClik() {
+// bot step stop ----- բոտի քայլի կանգ ------------------------------------- 
+function stopTimeout() {
+    clearTimeout(timeoutId);
 } 
 
-// Խաղացողի խաղալու ֆունկցիան -----------------
+// The player's play function ---- Խաղացողի խաղալու ֆունկցիան ----------------------------------------
 function move(row, col) {
     if ((matrix[row][col] !== null) || isBot || isDraw() || !gameProcess ) return;
 
@@ -72,30 +77,27 @@ function move(row, col) {
 
     if (checkWin(currentPlayer)) {
         gameProcess = false
-        noClik()
         result.innerHTML = `Player ${currentPlayer} wins!`;
         return;
     }
 
     currentPlayer = bot;
     isBot = true
-    setTimeout(() => {
+    timeoutId = setTimeout(() => {
         botMove();
     }, 1000);
 }
 
-// bot logic --------------------------------
+// bot logic ---- բոտի տրամաբանություն ----------------------------
 function botMove() {
     if (!isDraw()) {
         randomMove()
     } else {
-        noClik()
         result.innerHTML = 'Draw!'
         return; 
     }
     updateBoard()      // թարմացնենք կայքի վիզուալը
     if (checkWin(bot)) {
-        noClik()
         result.innerHTML = `Bot wins!`;
         return;
     }
@@ -120,7 +122,7 @@ function randomMove() {
 }
 
 
-// Game logic ---------------------------------
+// Game logic ---- Խաղի տրամաբանություն -----------------------------
 function updateBoard() {
     matrix.forEach((row, rowIndex) => {
         row.forEach((_, colIndex) => {
@@ -133,6 +135,7 @@ function updateBoard() {
     })
 }
 
+// checking the game result ---- խաղի արդյունքի ստուգում ----------------
 /**
  * 
  * @param {*} String player 
@@ -171,9 +174,11 @@ function isDraw() {
     return matrix.flat().every((el) => el !== null)
 }
 isDraw();
-// game start
+
+// game creation cal ---- խաղի ստեղծուման կանչ ------------------------------
 createGame();
 
+// new game ---- նոր խաղ ------------------------------
 newGame.addEventListener('click', () => {
     createGame();
 })
