@@ -8,8 +8,10 @@ let player = 'X'
 let bot = 'O'
 let currentPlayer = 'X';
 let isBot = false;
+let gameProcess = true;
 
 function createGame() {
+    gameProcess = true
     if (bot === 'X') {
         isBot = true
         player = 'O'
@@ -63,12 +65,13 @@ function noClik() {
 
 // Խաղացողի խաղալու ֆունկցիան -----------------
 function move(row, col) {
-    if ((matrix[row][col] !== null) || isBot || isDraw()) return;
+    if ((matrix[row][col] !== null) || isBot || isDraw() || !gameProcess ) return;
 
     matrix[row][col] = currentPlayer;
     updateBoard();      // թարմացնենք կայքի վիզուալը
 
     if (checkWin(currentPlayer)) {
+        gameProcess = false
         noClik()
         result.innerHTML = `Player ${currentPlayer} wins!`;
         return;
@@ -83,7 +86,6 @@ function move(row, col) {
 
 // bot logic --------------------------------
 function botMove() {
-
     if (!isDraw()) {
         randomMove()
     } else {
