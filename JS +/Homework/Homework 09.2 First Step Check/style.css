@@ -35,9 +35,9 @@
     cursor: default;
 }
 
-.cell.bomb {
+/* .cell.bomb {
     background-color: red;
-}
+} */
 
 .cell.flag {
     background-color: yellow;
