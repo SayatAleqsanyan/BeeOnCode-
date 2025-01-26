@@ -9,8 +9,8 @@ let bot = "O";
 let currentPlayer = "X";
 let isBot = false;
 let isSecond = false;
-let botMode = false;
-let gameProcess = true;
+let botMode = true;
+let gameProcess = false;
 let timeoutId = null;
 
 // creat game ----- խաղի ստեղծում --------------------------
@@ -148,15 +148,18 @@ function hardBotMove() {
   });
 
   if (move) {
-    if (bestScore < 0) {
-        randomMove()
+    console.log(bestScore);
+
+    if (bestScore <= 0 && matrix[1][1] === null) {
+        // randomMove() //////////////////////////////////////////////////////////////////////////////////////////
+          matrix[1][1] = bot
     } else {
         matrix[move.rowIndex][move.colIndex] = bot;
     }
   }
 }
 
-let hardCount = 10 
+let hardCount = 9 
 
 function minimax(matrix, depth, isMaximizing) {
   //   if (depth >= 6) {
